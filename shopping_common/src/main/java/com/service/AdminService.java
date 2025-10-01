@@ -2,6 +2,9 @@ package com.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.pojo.Admin;
+import com.pojo.Permission;
+
+import java.util.List;
 
 // 管理员服务
 public interface AdminService {
@@ -17,4 +20,8 @@ public interface AdminService {
     Page<Admin> search(int page, int size);
     // 修改管理员角色
     void updateRoleToAdmin(Long aid, Long[] rids);
+    Admin findByAdminName(String username);
+    // 根据用户名查询所有权限
+    List<Permission> findAllPermission(String username);
+
 }
